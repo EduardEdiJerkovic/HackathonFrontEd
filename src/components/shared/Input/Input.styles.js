@@ -1,4 +1,4 @@
-import { warningColor } from '../../../assets/shared/styles/general';
+import { grey1 } from "../../../assets/shared/styles/general";
 
 const styles = {
   input: {
@@ -11,7 +11,7 @@ const styles = {
     marginBottom: (props) => props.marginBottom,
     margin: '0',
     padding: '8px 16px',
-    backgroundColor: (props) => props.backgroundColor,
+    backgroundColor: grey1,
     color: 'rgba( 28, 33, 39, 0.75 )',
     fontSize: '16px',
     outline: 'none',
@@ -44,24 +44,6 @@ const styles = {
       opacity: '1',
       textAlign: 'left',
       fontSize: '16px'
-    },
-    '&.error': {
-      color: warningColor,
-      '&::placeholder': {
-        color: warningColor
-      },
-      '&::-webkit-input-placeholder': {
-        color: warningColor
-      },
-      '&:::-moz-placeholder': {
-        color: warningColor
-      },
-      '&::-ms-input-placeholder': {
-        color: warningColor
-      },
-      '&::-moz-placeholder': {
-        color: warningColor
-      }
     },
     '&.max-width': {
       width: '100%'

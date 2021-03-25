@@ -1,33 +1,26 @@
 import React from 'react';
 import injectSheet from 'react-jss';
-import { FormattedMessage } from 'react-intl';
+import { borderColor } from '../../../assets/shared/styles/general';
 
-import { borderColor, inputBackgroundColor } from '../../../assets/shared/styles/general';
+import styles from './Input.styles';
 
-import styles from './SmInput.styles';
-
-const SmInput = (props) => {
+const Input = (props) => {
   const {
     classes,
     name,
-    placeholderId,
+    placeholder,
     onChange,
     type,
     disabled,
     value,
     autoFocus,
     errorClass,
-    classAdditional,
-    backgroundColor
   } = props;
 
-  const error = errorClass ? 'error' : '';
-
   return (
-    <FormattedMessage id={placeholderId}>
-      {(message) => (
         <input
-          className={[classes.input, error, classAdditional].join(' ')}
+          className={classes.input}
+          placeholder={placeholder}
           onChange={onChange}
           type={type}
           name={name}
@@ -36,9 +29,7 @@ const SmInput = (props) => {
           value={value}
           autoFocus={autoFocus}
         />
-      )}
-    </FormattedMessage>
-  );
+      )
 };
 
 SmInput.defaultProps = {
@@ -51,4 +42,4 @@ SmInput.defaultProps = {
   autoFocus: false
 };
 
-export default injectSheet(styles)(SmInput);
+export default injectSheet(styles)(Input);

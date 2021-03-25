@@ -1,3 +1,1 @@
-import SmInput from './SmInput';
-
-export default SmInput;
+export { default } from './Input';
