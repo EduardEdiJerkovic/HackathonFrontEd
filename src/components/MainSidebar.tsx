@@ -20,4 +20,4 @@ const MainSidebar = () => {
   );
 };
 
-export default Sidebar;
+export default MainSidebar;
