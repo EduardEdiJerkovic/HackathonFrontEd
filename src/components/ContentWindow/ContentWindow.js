@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
 
 import Flights from '../Flights';
-import Tickets from '../Tickets';
+import Tickets from '../Tickets/Tickets.js';
 
 function ContentWindow() {
   return (
