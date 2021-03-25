@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
+import Admin from '../Admin/Admin';
 
 import Flights from '../Flights';
 
@@ -13,7 +14,7 @@ function ContentWindow() {
         <Flights></Flights>
       </Route>
       <Route path="/admin">
-        <Home />
+        <Admin></Admin>
       </Route>
     </Switch>
   );

@@ -80,12 +80,7 @@ interface FlightDataResult {
 
 interface GetPopularDestinationsParams {
   originCityCode: string;
-  maxPrice?: number;
-}
-
-interface GetPopularDestinationsParams {
-  originCityCode: string;
-  maxPrice?: number;
+  period: string;
 }
 
 interface PopularDestination {
