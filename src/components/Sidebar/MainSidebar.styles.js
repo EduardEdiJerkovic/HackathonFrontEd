@@ -3,6 +3,7 @@ const styles = {
     height: '100%',
     position: 'relative',
     backgroundColor: '#ccc',
+    width: '300px',
     '& a': {
       color: '#fff',
       textDecoration: 'none'

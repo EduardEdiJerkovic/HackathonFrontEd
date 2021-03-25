@@ -1,6 +1,7 @@
 import React from 'react';
 import injectSheet from 'react-jss';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
+import Flights from '../Flights';
 
 function ContentWindow() {
   return (
@@ -9,7 +10,7 @@ function ContentWindow() {
         <About />
       </Route>
       <Route path="/flights">
-        <Users />
+        <Flights></Flights>
       </Route>
       <Route path="/admin">
         <Home />
