@@ -1,7 +1,7 @@
 import React from 'react';
 import injectSheet from 'react-jss';
-import { borderColor } from '../../../assets/shared/styles/general';
 
+import { borderColor } from '../../../assets/shared/styles/general';
 import styles from './Input.styles';
 
 const Input = (props) => {
@@ -24,7 +24,6 @@ const Input = (props) => {
           onChange={onChange}
           type={type}
           name={name}
-          placeholder={message}
           disabled={disabled}
           value={value}
           autoFocus={autoFocus}
@@ -32,7 +31,7 @@ const Input = (props) => {
       )
 };
 
-SmInput.defaultProps = {
+Input.defaultProps = {
   type: 'text',
   marginBottom: '0px',
   disabled: false,

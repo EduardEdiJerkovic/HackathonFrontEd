@@ -1,11 +1,11 @@
-import React, { useState }  from 'react';
-import Button from '../../shared/Button/Button';
+import React, { useState } from 'react';
 import injectSheet from 'react-jss';
 
-import CustomSelect from '../../shared/Select';
 import airportOptions from '../../../constants/airports';
 import statuses from '../../../constants/status';
-import styles from './SearchFlightsForm.styles'
+import Button from '../../shared/Button/Button';
+import CustomSelect from '../../shared/Select';
+import styles from './SearchFlightsForm.styles';
 
 const SearchFlightsForm = (props) => {
     const [airport, setAirport] = useState(null);
