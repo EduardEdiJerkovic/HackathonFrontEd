@@ -1,6 +1,6 @@
 import React from 'react';
 import injectSheet from 'react-jss';
-import { white } from '../../../assets/shared/styles/general';
+import { regular, white } from '../../../assets/shared/styles/general';
 
 import styles from './SmButton.styles';
 
