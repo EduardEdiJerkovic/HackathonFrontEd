@@ -1,0 +1,7 @@
+.map-wrapper {
+  flex-grow: 1;
+}
+
+.map-wrapper.small {
+  height: 300px;
+}

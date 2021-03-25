@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
+import Flights from '../Flights';
 
 import { TOKEN } from '../../constants/local-storage';
 import TokenService from '../../services/token.service';
@@ -11,7 +12,7 @@ function ContentWindow() {
         <About />
       </Route>
       <Route path="/flights">
-        <Users />
+        <Flights></Flights>
       </Route>
       <Route path="/admin">
         <Home />
