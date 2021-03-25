@@ -5,12 +5,13 @@ const styles = {
   },
   flightsList: {
     flexGrow: '1',
-    marginRight: '16px'
+    marginRight: '16px',
+    maxWidth: '400px'
   },
   pageTitle: {
     width: '100%',
     borderBottom: '1px solid #ccc',
-    paddingBottom: '8px'
+    paddingBottom: '16px'
   }
 }
 

@@ -1,22 +1,24 @@
 import React, { useState }  from 'react';
 import Button from '../../shared/Button/Button';
+import injectSheet from 'react-jss';
 
 import CustomSelect from '../../shared/Select';
 import airportOptions from '../../../constants/airports';
 import statuses from '../../../constants/status';
+import styles from './SearchFlightsForm.styles'
 
 const SearchFlightsForm = (props) => {
     const [airport, setAirport] = useState(null);
     const [status, setStatus] = useState(null);
-    const { handleSubmit } = props;
+    const { handleSubmit, classes } = props;
 
     function formSubmit() {
-      console.log(airport);
+      handleSubmit(airport, status);
     }
 
     return (
       <React.Fragment>
-        <form onSubmit={(e) => {e.preventDefault(); formSubmit()}}>
+        <form  className={classes.form} onSubmit={(e) => {e.preventDefault(); formSubmit()}}>
           <CustomSelect
             options={Object.keys(airportOptions).map(
               airport => { return { value: airport, label: airportOptions[airport]['name']}})
@@ -45,4 +47,4 @@ const SearchFlightsForm = (props) => {
     );
 }
 
-export default SearchFlightsForm;
+export default injectSheet(styles)(SearchFlightsForm);
