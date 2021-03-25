@@ -2,12 +2,13 @@ import React from 'react';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
 
 import Flights from '../Flights';
+import Tickets from '../Tickets';
 
 function ContentWindow() {
   return (
     <Switch>
       <Route path="/tickets">
-        <About />
+        <Tickets></Tickets>
       </Route>
       <Route path="/flights">
         <Flights></Flights>
