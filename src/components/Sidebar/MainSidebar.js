@@ -13,7 +13,7 @@ const mql = window.matchMedia(`(min-width: 800px)`);
 const MainSidebar = (props) => {
   const { classes } = props;
   return (
-      <Sidebar classes={classes.sidebar} isCollapsed={true}>
+      <Sidebar classes={classes.sidebar} isCollapsed={false}>
         <LogoText>FlightHelp</LogoText>
         <DropdownItem classes={classes.menuItem}
           values={[<Link to='/tickets/reservate'>Reservate</Link>,<Link to='/tickets/buy'>Buy</Link>]}>
