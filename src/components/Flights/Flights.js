@@ -4,6 +4,7 @@ import LeafletMap from '../shared/LeafletMap/LeafletMap';
 import Spinner from '../shared/Spinner';
 
 import styles from './Flights.styles';
+import SearchFlightsForm from '../Forms/SearchFlightsForm/SearchFlightsForm';
 
 function Flights(props) {
   const [flights, setFlights] = useState([1]);
@@ -19,6 +20,7 @@ function Flights(props) {
     <h3 className={classes.pageTitle}>Flights</h3>
     <div className={classes.pageContent}>
       <div className={classes.flightsList}>
+        <SearchFlightsForm />
         {flights.length ? flights.map((flight, index) => {
           return <div>Flight {index}</div>
         }) : <Spinner />}

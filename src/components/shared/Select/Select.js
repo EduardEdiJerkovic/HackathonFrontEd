@@ -1,10 +1,9 @@
 import React from 'react';
 import Select from 'react-select';
 
-import { borderColor, inputColor } from '../../assets/shared/styles/general';
-import styles from './Select.styles';
+import { borderColor, grey1, inputColor } from '../../../assets/shared/styles/general';
 
-const Select = (props) => {
+const CustomSelect = (props) => {
   const {
     isSearchable,
     isClearable,
@@ -13,12 +12,40 @@ const Select = (props) => {
     onChange,
     isDisabled,
     width,
+    placeholder
   } = props;
+
+  const styles = {
+    select: {
+      control: (base, state) => ({
+        ...base,
+        border: props.border ? props.border : 'None',
+        backgroundColor: `${isDisabled ? grey1 : props.backgroundColor}`,
+        borderRadius: props.borderRadius
+
+      }),
+      container: (base, { selectProps: { width } }) => ({
+        ...base,
+        width: width,
+        marginBottom: props.marginBottom,
+        color: '#1C2127'
+      }),
+      valueContainer: (base, state) => ({
+        ...base,
+        padding: '8px'
+      }),
+      menuList: (base, state) => ({
+        ...base,
+        maxHeight: '220px'
+      })
+    }
+  }
 
   return (
     <Select
       isSearchable={isSearchable}
       isClearable={isClearable}
+      placeholder={placeholder}
       blurInputOnSelect={true}
       isDisabled={isDisabled}
       value={defaultValue}
@@ -30,7 +57,7 @@ const Select = (props) => {
   );
 };
 
-SmSelect.defaultProps = {
+CustomSelect.defaultProps = {
   isSearchable: false,
   isClearable: false,
   showIcon: true,
@@ -41,4 +68,4 @@ SmSelect.defaultProps = {
   backgroundColor: inputColor
 };
 
-export default Select;
+export default CustomSelect;

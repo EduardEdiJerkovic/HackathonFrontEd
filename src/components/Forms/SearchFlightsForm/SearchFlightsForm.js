@@ -1,44 +1,48 @@
-import React, { Component } from 'react';
+import React, { useState }  from 'react';
 import Button from '../../shared/Button/Button';
-import Input from '../../shared/Input';
 
-import LocationSearchInput from '../../Shared/LocationInput/LocationSearchInput';
+import CustomSelect from '../../shared/Select';
+import airportOptions from '../../../constants/airports';
+import statuses from '../../../constants/status';
 
+const SearchFlightsForm = (props) => {
+    const [airport, setAirport] = useState(null);
+    const [status, setStatus] = useState(null);
+    const { handleSubmit } = props;
 
-class SearchRouteForm extends Component {
-  render() {
-
-    const { handleAirport,
-      handleSubmit } = this.props;
+    function formSubmit() {
+      console.log(airport);
+    }
 
     return (
       <React.Fragment>
-        <form className="search-flights medium" onSubmit={handleSubmit}>
-          <Select
-            customStyles={countrySelectStyles}
-            options={countryList().getData()}
-            placeholderId="RequestManual.country"
-            errorClass={
-              this.state.errors ? (this.state.errors['errorFields'].indexOf('country') > -1 ? true : null) : null
+        <form onSubmit={(e) => {e.preventDefault(); formSubmit()}}>
+          <CustomSelect
+            options={Object.keys(airportOptions).map(
+              airport => { return { value: airport, label: airportOptions[airport]['name']}})
             }
             isSearchable
             isClearable
-            backgroundColor={inputBackgroundColor}
+            placeholder="Select Airport"
             marginBottom="16px"
             onChange={(value) => {
-              if (value === null) {
-                this.setState({ country: '', stateInputDisabled: true, countryState: '' });
-              } else {
-                let stateInputDisabled = value.label !== 'United States';
-                this.setState({ stateInputDisabled: stateInputDisabled, country: value.label });
-              }
+              setAirport(value.value);
             }}
           />
-          <Button></Button>
+          <CustomSelect
+            options={statuses}
+            isSearchable
+            isClearable
+            placeholder="Select flight status"
+            marginBottom="16px"
+            onChange={(value) => {
+              setStatus(value.value);
+            }}
+          />
+          <Button type="submit">Search</Button>
         </form>
       </React.Fragment>
     );
-  }
 }
 
-export default SearchRouteForm;
+export default SearchFlightsForm;

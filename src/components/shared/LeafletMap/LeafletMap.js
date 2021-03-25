@@ -39,7 +39,7 @@ class LeafletMap extends Component {
     return (
       <React.Fragment>
           <div className='map-wrapper'>
-          <MapContainer center={center} zoom={ 14 } ref={() => this.saveMap}>
+          <MapContainer center={center} zoom={ 8 } ref={() => this.saveMap}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           </MapContainer>
         </div>
@@ -49,3 +49,6 @@ class LeafletMap extends Component {
 }
 
 export default LeafletMap;
+
+
+

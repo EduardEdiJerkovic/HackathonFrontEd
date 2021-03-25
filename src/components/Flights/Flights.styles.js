@@ -4,7 +4,8 @@ const styles = {
     height: '100%'
   },
   flightsList: {
-    flexGrow: '1'
+    flexGrow: '1',
+    marginRight: '16px'
   },
   pageTitle: {
     width: '100%',
