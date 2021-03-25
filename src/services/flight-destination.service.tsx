@@ -59,8 +59,7 @@ interface FlightDataResult {
  * @param params
  * @returns
  */
-
- const getFlightDestinations = async (
+const getFlightDestinations = async (
   params: GetFlightDestinationParams
 ): Promise<AxiosResponse<FlightDataResult>> => {
   const result = await axios.get<FlightDataResult>(
