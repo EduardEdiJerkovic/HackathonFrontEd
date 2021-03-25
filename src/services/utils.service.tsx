@@ -17,3 +17,7 @@ export const createHeader = (
     Authorization: `Bearer ${token}`,
   };
 };
+
+export const createHeaderForToken = () => {
+  return { "Content-Type": "application/" + ContentTypeEnum.XFORM };
+};
