@@ -3,7 +3,6 @@ import axios, { AxiosResponse } from 'axios';
 import Configuration from '../config/Configuration';
 import { createHeader } from './utils.service';
 
-
 interface GetFlightScheduleParams {
   carrierCode: string;
   flightNumber: string;
@@ -12,52 +11,52 @@ interface GetFlightScheduleParams {
 }
 
 interface Timing {
-  qualifier: string,
-  value: string,
+  qualifier: string;
+  value: string;
 }
 
 interface FlightPoint {
-    iataCode: string,
-    departure: {
-      timings: Timing[]
-    }
+  iataCode: string;
+  departure: {
+    timings: Timing[];
+  };
 }
 
 interface FlightSegment {
-  boardPointIataCode: string,
-  offPointIataCode: string,
-  scheduledSegmentDuration: string
+  boardPointIataCode: string;
+  offPointIataCode: string;
+  scheduledSegmentDuration: string;
 }
 
 interface FlightLeg {
-    boardPointIataCode: string,
-    offPointIataCode: string,
-    aircraftEquipment: {
-      aircraftType: string
-    },
-    scheduledLegDuration: string
+  boardPointIataCode: string;
+  offPointIataCode: string;
+  aircraftEquipment: {
+    aircraftType: string;
+  };
+  scheduledLegDuration: string;
 }
 
 interface FlightSchedule {
-    type: string,
-    scheduledDepartureDate: string,
-    flightDesignator: {
-      carrierCode: string,
-      flightNumber: number
-    },
-    flightPoints: FlightPoint[]
-    segments: FlightSegment[],
-    legs: FlightLeg[],
+  type: string;
+  scheduledDepartureDate: string;
+  flightDesignator: {
+    carrierCode: string;
+    flightNumber: number;
+  };
+  flightPoints: FlightPoint[];
+  segments: FlightSegment[];
+  legs: FlightLeg[];
 }
 
 interface FlightScheduleResult {
   meta: {
-    count: number,
+    count: number;
     links: {
-      self: string,
-    }
-  },
-  data: FlightSchedule[]
+      self: string;
+    };
+  };
+  data: FlightSchedule[];
 }
 
 const URL = "schedule/flights";
