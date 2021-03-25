@@ -6,8 +6,8 @@ import { createHeader } from './utils.service';
 /**
  * Params for flight destination.
  */
-interface GetFlightDestinationParams {
-  origin?: string;
+export interface GetFlightDestinationParams {
+  origin: string;
   maxPrice?: number;
 }
 
