@@ -3,12 +3,15 @@ import axios, { AxiosResponse } from 'axios';
 import Configuration from '../config/Configuration';
 import { createHeader } from './utils.service';
 
+
+let URL = "shopping/flight-destinations";
 /**
  * Params for flight destination.
  */
 interface GetFlightDestinationParams {
   origin: string;
-  maxPrice?: number;
+  period: string;
+  max?: number;
 }
 
 interface FlightData {
@@ -51,8 +54,6 @@ interface FlightDataResult {
   meta: FlightMeta;
 }
 
-const URL = "shopping/flight-destinations";
-
 /**
  * Get all flight destinations.
  * @param params
@@ -72,6 +73,47 @@ const getFlightDestinations = async (
   return result;
 };
 
-const FlightDestinationService = { getFlightDestinations };
+/**
+ * Params for most popular destinations.
+ */
+
+interface GetPopularDestinationsParams {
+  originCityCode: string;
+  period: string;
+}
+
+interface PopularDestination {
+  type: string;
+  destination: string;
+  subType: string;
+  analytics: object;
+}
+interface FlightMostPopularDestinationsResult {
+  meta: {
+    count: number;
+    links: {
+      self: string;
+    };
+  };
+  data: PopularDestination[];
+}
+
+URL = 'travel/analytics/air-traffic/booked'
+
+const mostPopularDestinations = async (
+  params: GetPopularDestinationsParams
+): Promise<AxiosResponse<FlightMostPopularDestinationsResult>> => {
+  const result = await axios.get<FlightMostPopularDestinationsResult>(
+    Configuration.SERVER_URL + URL,
+    {
+      headers: createHeader(),
+      params,
+    }
+  );
+
+  return result;
+};
+
+const FlightDestinationService = { getFlightDestinations, mostPopularDestinations };
 
 export default FlightDestinationService;
