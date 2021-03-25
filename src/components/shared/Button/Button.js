@@ -1,10 +1,7 @@
 import React from 'react';
 import injectSheet from 'react-jss';
 
-<<<<<<< HEAD
 import { regular, white } from '../../../assets/shared/styles/general';
-=======
->>>>>>> a9bae6bc5466df3aec2e1ef056fd067f5716f45e
 import styles from './Button.styles';
 
 const Button = (props) => {
