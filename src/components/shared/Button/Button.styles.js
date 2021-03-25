@@ -6,6 +6,7 @@ const styles = {
     border: (props) => (props.secondary ? `1px solid ${borderColor}` : 'none'),
     borderRadius: '3px',
     padding: '8px 16px',
+    height: '48px',
     backgroundColor: buttonColor,
     color: (props) => props.textColor,
     fontSize: (props) => props.fontSize,

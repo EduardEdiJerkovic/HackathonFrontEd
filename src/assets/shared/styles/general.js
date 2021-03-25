@@ -5,6 +5,7 @@ export const body = '#1c2127';
 export const grey2 = '#e9e9e9';
 export const grey1 = '#f0f1f1';
 export const buttonColor = '#24a0ed';
+export const inputColor = '#F2F2F2';
 export const borderColor = '#d9dcde';
 
 // z-indexes

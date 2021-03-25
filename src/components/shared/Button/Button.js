@@ -2,13 +2,13 @@ import React from 'react';
 import injectSheet from 'react-jss';
 import { regular, white } from '../../../assets/shared/styles/general';
 
-import styles from './SmButton.styles';
+import styles from './Button.styles';
 
 const Button = (props) => {
-  const { classes, onClick, disabled, className } = props;
+  const { classes, onClick, disabled, className, type } = props;
 
   return (
-    <button className={classes.smButton} disabled={disabled} onClick={onClick}>
+    <button className={classes.smButton} type={type} disabled={disabled} onClick={onClick}>
       {props.children}
     </button>
   );

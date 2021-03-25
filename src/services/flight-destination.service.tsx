@@ -58,6 +58,8 @@ const URL = "shopping/flight-destinations";
  * @param params
  * @returns
  */
+
+console.log(Configuration);
 const getFlightDestinations = async (
   params: GetFlightDestinationParams
 ): Promise<AxiosResponse<FlightDataResult>> => {
