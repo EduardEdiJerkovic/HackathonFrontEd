@@ -13,7 +13,6 @@ const mql = window.matchMedia(`(min-width: 800px)`);
 const MainSidebar = (props) => {
   const { classes } = props;
   return (
-    <div width='300px'>
       <Sidebar classes={classes.sidebar} isCollapsed={false}>
         <LogoText>FlightHelp</LogoText>
         <DropdownItem classes={classes.menuItem}
@@ -32,7 +31,6 @@ const MainSidebar = (props) => {
           <span className={classes.menuLabel}>Administration</span>
         </DropdownItem>
       </Sidebar>
-    </div>
   );
 };
 

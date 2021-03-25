@@ -5,13 +5,15 @@ const styles = {
     '& a': {
       color: '#fff',
       textDecoration: 'none'
+    },
+    '& div': {
+      backgroundColor: '#ccc'
     }
   },
   menuItem: {
-    backgroundColor: '#ccc',
     '& > div:first-of-type': {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
     }
   },
   menuSingleItem: {
@@ -20,7 +22,7 @@ const styles = {
   },
   menuLabel: {
     marginLeft: '16px',
-    fontSize: '18px'
+    fontSize: '18px',
   }
 }
 
