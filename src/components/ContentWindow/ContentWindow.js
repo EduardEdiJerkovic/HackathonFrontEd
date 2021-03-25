@@ -1,6 +1,8 @@
 import React from 'react';
-import injectSheet from 'react-jss';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
+
+import { TOKEN } from '../../constants/local-storage';
+import TokenService from '../../services/token.service';
 
 function ContentWindow() {
   return (
@@ -21,6 +23,8 @@ function ContentWindow() {
 export default ContentWindow;
 
 function Home() {
+  TokenService.fetchOrResetToken();
+  console.log("----token", localStorage.getItem(TOKEN));
   return <h2>Home</h2>;
 }
 

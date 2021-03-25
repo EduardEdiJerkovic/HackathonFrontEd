@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 
 import Configuration from '../config/Configuration';
 import { TOKEN } from '../constants/local-storage';
-import { createHeader } from './utils.service';
+import { ContentTypeEnum, createHeader } from './utils.service';
 
 const URL = "security/oauth2/token";
 
@@ -30,10 +30,14 @@ const getToken = async (): Promise<AxiosResponse<GetTokenResult>> => {
     client_id: Configuration.PUBLIC_KEY,
     client_secret: Configuration.PRIVATE_KEY,
   };
-  const result = await axios.get(Configuration.SERVER_URL + URL, {
-    headers: createHeader(),
-    params,
-  });
+  const result = await axios
+    .get(Configuration.SERVER_URL + URL, {
+      headers: createHeader(ContentTypeEnum.XFORM),
+      params,
+    })
+    .catch((error) => {
+      throw error;
+    });
 
   return result;
 };

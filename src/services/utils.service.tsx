@@ -1,12 +1,19 @@
 import { TOKEN } from '../constants/local-storage';
 
+export enum ContentTypeEnum {
+  JSON = "json",
+  XFORM = "x-www-form-urlencoded",
+}
+
 /**
  * Creates header with token.
  */
-export const createHeader = () => {
+export const createHeader = (
+  contentType: ContentTypeEnum = ContentTypeEnum.JSON
+) => {
   const token = localStorage.getItem(TOKEN);
   return {
-    "Content-Type": "application/json",
+    "Content-Type": "application/" + contentType,
     Authorization: `Bearer ${token}`,
   };
 };
