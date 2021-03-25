@@ -2,7 +2,9 @@ import axios, { AxiosResponse } from 'axios';
 
 import Configuration from '../config/Configuration';
 import { createHeader } from './utils.service';
-const URL = "shopping/flight-destinations";
+
+
+let URL = "shopping/flight-destinations";
 /**
  * Params for flight destination.
  */
@@ -101,6 +103,8 @@ interface FlightMostPopularDestinationsResult {
   };
   data: PopularDestination[];
 }
+
+URL = 'travel/analytics/air-traffic/booked'
 
 const mostPopularDestinations = async (
   params: GetPopularDestinationsParams

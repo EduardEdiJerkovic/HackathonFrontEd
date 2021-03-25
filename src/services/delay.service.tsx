@@ -32,7 +32,7 @@ interface FlightDelayResult {
   data: Delay[];
 }
 
-const URL = "travel/predictions/flight-delay";
+let URL = "travel/predictions/flight-delay";
 
 /**
  * Get all flight schedule.
