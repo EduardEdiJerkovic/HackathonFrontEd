@@ -48,7 +48,6 @@ interface FlightSchedule {
     flightPoints: FlightPoint[]
     segments: FlightSegment[],
     legs: FlightLeg[],
-  }
 }
 
 interface FlightScheduleResult {

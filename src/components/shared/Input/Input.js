@@ -13,8 +13,7 @@ const Input = (props) => {
     type,
     disabled,
     value,
-    autoFocus,
-    errorClass,
+    autoFocus
   } = props;
 
   return (
@@ -24,7 +23,7 @@ const Input = (props) => {
           onChange={onChange}
           type={type}
           name={name}
-          placeholder={message}
+          placeholder={placeholder}
           disabled={disabled}
           value={value}
           autoFocus={autoFocus}
@@ -32,7 +31,7 @@ const Input = (props) => {
       )
 };
 
-SmInput.defaultProps = {
+Input.defaultProps = {
   type: 'text',
   marginBottom: '0px',
   disabled: false,
