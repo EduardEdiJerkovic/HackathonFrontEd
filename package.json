@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "glamor": "^2.20.40",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,6 +20,7 @@
     "react-select": "^4.3.0",
     "react-sidebar": "^3.0.2",
     "react-sidebar-ui": "^1.2.1",
+    "react-toastify": "^7.0.3",
     "typescript": "^4.2.3",
     "web-vitals": "^1.1.1"
   },

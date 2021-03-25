@@ -13,8 +13,7 @@ const Input = (props) => {
     type,
     disabled,
     value,
-    autoFocus,
-    errorClass,
+    autoFocus
   } = props;
 
   return (

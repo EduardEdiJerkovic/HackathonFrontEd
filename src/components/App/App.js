@@ -11,6 +11,16 @@ function App(props) {
 
   return (
     <Router>
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange
+        pauseOnHover
+      />
       <div className={classes.content}>
         <MainSidebar />
         <div className={classes.page}>

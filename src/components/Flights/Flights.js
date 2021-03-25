@@ -5,11 +5,10 @@ import Spinner from '../shared/Spinner';
 
 import styles from './Flights.styles';
 import SearchFlightsForm from '../Forms/SearchFlightsForm';
-import FlightDestinationService from '../../services/flight-destination.service';
 import TokenService from '../../services/token.service';
+import FlightScheduleService from '../../services/flight-schedule.service';
 
 function Flights(props) {
-  const [flights, setFlights] = useState([1]);
   let map = React.createRef();
   const { classes } = props;
 
@@ -20,7 +19,7 @@ function Flights(props) {
 
   function searchFlights(airport, status) {
     TokenService.fetchOrResetToken();
-    FlightDestinationService.getFlightDestinations({origin: airport}).then(data => {
+    FlightScheduleService.getFlightSchedule({origin: airport}).then(data => {
       console.log(data);
     })
   }
@@ -30,9 +29,6 @@ function Flights(props) {
     <div className={classes.pageContent}>
       <div className={classes.flightsList}>
         <SearchFlightsForm handleSubmit={(airport, status) => searchFlights(airport, status)} />
-        {flights.length ? flights.map((flight, index) => {
-          return <div>Flight {index}</div>
-        }) : <Spinner />}
       </div>
       <LeafletMap setMap={setMap}></LeafletMap>
     </div>

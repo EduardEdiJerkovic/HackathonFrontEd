@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import injectSheet from 'react-jss';
 
 import airportOptions from '../../../constants/airports';
-import statuses from '../../../constants/status';
 import Button from '../../shared/Button/Button';
 import CustomSelect from '../../shared/Select';
 import styles from './SearchFlightsForm.styles';
 
 const SearchFlightsForm = (props) => {
     const [airport, setAirport] = useState(null);
-    const [status, setStatus] = useState(null);
+    const [flightNumber, setFlightNumber] = useState(null);
+    const [departureDate, setDepartureDate] = useState(null);
     const { handleSubmit, classes } = props;
 
     function formSubmit() {
-      handleSubmit(airport, status);
+      Toast.triggerSuccess('Searching for flight...');
+      handleSubmit({carrierCode: airport, flightNumber: flightNumber, scheduledDepartureDate: departureDate});
     }
 
     return (
@@ -31,16 +32,29 @@ const SearchFlightsForm = (props) => {
               setAirport(value.value);
             }}
           />
-          <CustomSelect
-            options={statuses}
-            isSearchable
-            isClearable
-            placeholder="Select flight status"
-            marginBottom="16px"
-            onChange={(value) => {
-              setStatus(value.value);
+          <Input
+            name={'flightNumber'}
+            type='text'
+            placeholder={'Flight Number'}
+            borderRadius="3px"
+            onChange={(event) => {
+              setFlightNumber(event.target.value)
             }}
+            value={flightNumber}
+            marginBottom={16}
           />
+          <Input
+            name={'departureDate'}
+            type='date'
+            placeholder={departureDate}
+            borderRadius="3px"
+            onChange={(event) => {
+              setDepartureDate(event.target.value)
+            }}
+            value={flightNumber}
+            marginBottom={16}
+          />
+
           <Button type="submit">Search</Button>
         </form>
       </React.Fragment>
