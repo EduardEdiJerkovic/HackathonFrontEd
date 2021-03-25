@@ -6,6 +6,7 @@ import CustomSelect from '../../shared/Select';
 import airportOptions from '../../../constants/airports';
 import styles from './SearchFlightsForm.styles'
 import Input from '../../shared/Input';
+import Toast from '../../../utils/toast';
 
 const SearchFlightsForm = (props) => {
     const [airport, setAirport] = useState(null);
@@ -14,9 +15,7 @@ const SearchFlightsForm = (props) => {
     const { handleSubmit, classes } = props;
 
     function formSubmit() {
-      console.log(airport);
-      console.log(flightNumber);
-      console.log(departureDate)
+      Toast.triggerSuccess('Searching for flight...');
       handleSubmit({carrierCode: airport, flightNumber: flightNumber, scheduledDepartureDate: departureDate});
     }
 

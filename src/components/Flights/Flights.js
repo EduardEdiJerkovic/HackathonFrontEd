@@ -9,7 +9,6 @@ import TokenService from '../../services/token.service';
 import FlightScheduleService from '../../services/flight-schedule.service';
 
 function Flights(props) {
-  const [flights, setFlights] = useState([1]);
   let map = React.createRef();
   const { classes } = props;
 
@@ -30,9 +29,6 @@ function Flights(props) {
     <div className={classes.pageContent}>
       <div className={classes.flightsList}>
         <SearchFlightsForm handleSubmit={(airport, status) => searchFlights(airport, status)} />
-        {flights.length ? flights.map((flight, index) => {
-          return <div>Flight {index}</div>
-        }) : <Spinner />}
       </div>
       <LeafletMap setMap={setMap}></LeafletMap>
     </div>
