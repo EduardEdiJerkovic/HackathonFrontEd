@@ -4,8 +4,8 @@ const styles = {
     height: '100%'
   },
   page: {
-    display: 'flex',
-    padding: '24px'
+    width: '100%',
+    paddingLeft: '24px'
   }
 }
 
