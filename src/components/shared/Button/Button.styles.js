@@ -1,9 +1,9 @@
-import { ashPale, buttonColor, primaryColor } from '../../../assets/shared/styles/general';
+import {  borderColor, buttonColor } from '../../../assets/shared/styles/general';
 
 const styles = {
   smButton: {
     minWidth: (props) => props.minWidth,
-    border: (props) => (props.secondary ? `1px solid ${ashPale}` : 'none'),
+    border: (props) => (props.secondary ? `1px solid ${borderColor}` : 'none'),
     borderRadius: '3px',
     padding: '8px 16px',
     backgroundColor: buttonColor,
