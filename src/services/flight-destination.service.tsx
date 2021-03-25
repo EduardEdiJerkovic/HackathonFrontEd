@@ -7,7 +7,7 @@ import { createHeader } from './utils.service';
  * Params for flight destination.
  */
 interface GetFlightDestinationParams {
-  origin?: string;
+  origin: string;
   maxPrice?: number;
 }
 
@@ -46,7 +46,7 @@ interface FlightMeta {
 }
 
 interface FlightDataResult {
-  data: FlightData;
+  data: FlightData[];
   dictionaries: FlightDictionaries;
   meta: FlightMeta;
 }
@@ -61,10 +61,13 @@ const URL = "shopping/flight-destinations";
 const getFlightDestinations = async (
   params: GetFlightDestinationParams
 ): Promise<AxiosResponse<FlightDataResult>> => {
-  const result = await axios.get(Configuration.SERVER_URL + URL, {
-    headers: createHeader(),
-    params,
-  });
+  const result = await axios.get<FlightDataResult>(
+    Configuration.SERVER_URL + URL,
+    {
+      headers: createHeader(),
+      params,
+    }
+  );
 
   return result;
 };
