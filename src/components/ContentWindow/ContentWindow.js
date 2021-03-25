@@ -1,6 +1,6 @@
 import React from 'react';
-import injectSheet from 'react-jss';
 import { BrowserRouter as Route, Switch } from 'react-router-dom';
+
 import Flights from '../Flights';
 
 function ContentWindow() {

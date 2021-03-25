@@ -2,15 +2,9 @@ import axios, { AxiosResponse } from 'axios';
 
 import Configuration from '../config/Configuration';
 import { TOKEN } from '../constants/local-storage';
-import { createHeader } from './utils.service';
+import { createHeaderForToken } from './utils.service';
 
 const URL = "security/oauth2/token";
-
-interface GetTokenParams {
-  grant_type: string;
-  client_id: string;
-  client_secret: string;
-}
 
 interface GetTokenResult {
   type: string;
@@ -25,14 +19,9 @@ interface GetTokenResult {
 }
 
 const getToken = async (): Promise<AxiosResponse<GetTokenResult>> => {
-  const params: GetTokenParams = {
-    grant_type: "client_credentials",
-    client_id: Configuration.PUBLIC_KEY,
-    client_secret: Configuration.PRIVATE_KEY,
-  };
-  const result = await axios.get(Configuration.SERVER_URL + URL, {
-    headers: createHeader(),
-    params,
+  const body: string = `grant_type=client_credentials&client_id=${Configuration.PUBLIC_KEY}&client_secret=${Configuration.PRIVATE_KEY}`;
+  const result = await axios.post(Configuration.SERVER_URL + URL, body, {
+    headers: createHeaderForToken(),
   });
 
   return result;
