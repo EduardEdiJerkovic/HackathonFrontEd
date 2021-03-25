@@ -4,6 +4,9 @@ import LeafletMap from '../shared/LeafletMap/LeafletMap';
 import Spinner from '../shared/Spinner';
 
 import styles from './Flights.styles';
+import SearchFlightsForm from '../Forms/SearchFlightsForm';
+import FlightDestinationService from '../../services/flight-destination.service';
+import TokenService from '../../services/token.service';
 
 function Flights(props) {
   const [flights, setFlights] = useState([1]);
@@ -15,10 +18,18 @@ function Flights(props) {
     this.setState({isMapInit: true})
   }
 
+  function searchFlights(airport, status) {
+    TokenService.fetchOrResetToken();
+    FlightDestinationService.getFlightDestinations({origin: airport}).then(data => {
+      console.log(data);
+    })
+  }
+
   return <Fragment>
     <h3 className={classes.pageTitle}>Flights</h3>
     <div className={classes.pageContent}>
       <div className={classes.flightsList}>
+        <SearchFlightsForm handleSubmit={(airport, status) => searchFlights(airport, status)} />
         {flights.length ? flights.map((flight, index) => {
           return <div>Flight {index}</div>
         }) : <Spinner />}
