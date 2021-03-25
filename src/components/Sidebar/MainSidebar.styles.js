@@ -1,6 +1,7 @@
 const styles = {
   sidebar: {
     height: '100%',
+    position: 'relative',
     backgroundColor: '#ccc',
     '& a': {
       color: '#fff',
