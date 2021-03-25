@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import injectSheet from 'react-jss';
 
 import airportOptions from '../../../constants/airports';
+import Toast from '../../../utils/toast';
 import Button from '../../shared/Button/Button';
+import Input from '../../shared/Input';
 import CustomSelect from '../../shared/Select';
 import styles from './SearchFlightsForm.styles';
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import injectSheet from 'react-jss';
 
 import airportOptions from '../../constants/airports';
+import Toast from '../../utils/toast';
 import Button from '../shared/Button/Button';
 import Input from '../shared/Input';
 import CustomSelect from '../shared/Select';
@@ -15,6 +16,7 @@ const ReservateForm = (props) => {
   const { handleSubmit, classes } = props;
 
   function formSubmit() {
+    Toast.triggerSuccess('Searching for flight...');
     handleSubmit(departureAirport, destinationAirport, departureDate);
   }
 

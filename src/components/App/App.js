@@ -1,6 +1,7 @@
 import React from 'react';
 import injectSheet from 'react-jss';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import ContentWindow from '../ContentWindow';
 import MainSidebar from '../Sidebar';
