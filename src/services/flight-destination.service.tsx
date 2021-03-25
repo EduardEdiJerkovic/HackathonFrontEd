@@ -11,7 +11,7 @@ interface GetFlightDestinationParams {
   maxPrice?: number;
 }
 
-interface FlightData {
+export interface FlightData {
   type: string;
   origin: string;
   destination: string;
@@ -46,7 +46,7 @@ interface FlightMeta {
 }
 
 interface FlightDataResult {
-  data: FlightData;
+  data: FlightData[];
   dictionaries: FlightDictionaries;
   meta: FlightMeta;
 }
@@ -59,7 +59,7 @@ const URL = "shopping/flight-destinations";
  * @returns
  */
 const getFlightDestinations = async (
-  params: GetFlightDestinationParams
+  params?: GetFlightDestinationParams
 ): Promise<AxiosResponse<FlightDataResult>> => {
   const result = await axios.get(Configuration.SERVER_URL + URL, {
     headers: createHeader(),

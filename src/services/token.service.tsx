@@ -46,3 +46,5 @@ const fetchOrResetToken = async () => {
 const TokenService = { fetchOrResetToken };
 
 export default TokenService;
+
+//TokenService.fetchOrResetToken();
