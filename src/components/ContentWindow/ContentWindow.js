@@ -8,10 +8,10 @@ function ContentWindow() {
   return (
     <Switch>
       <Route path="/tickets">
-        <Tickets></Tickets>
+        <Tickets />
       </Route>
       <Route path="/flights">
-        <Flights></Flights>
+        <Flights />
       </Route>
       <Route path="/admin">
         <Home />
@@ -24,12 +24,4 @@ export default ContentWindow;
 
 function Home() {
   return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }

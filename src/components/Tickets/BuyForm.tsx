@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Button from '../shared/Button/Button';
 
-
 class BuyForm extends Component {
   render() {
     return (

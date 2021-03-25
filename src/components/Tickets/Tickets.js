@@ -7,16 +7,14 @@ import ReservateForm from './ReservateForm';
 function Tickets() {
   return (
     <Switch>
-      <Route path="/reservate">
-        <ReservateForm></ReservateForm>
+      <Route exact path="/tickets/reservate">
+        <ReservateForm />
       </Route>
-      <Route path="/buy">
-          <BuyForm></BuyForm>
+      <Route exact path="/tickets/buy">
+        <BuyForm></BuyForm>
       </Route>
     </Switch>
   );
 }
-
-
 
 export default Tickets;

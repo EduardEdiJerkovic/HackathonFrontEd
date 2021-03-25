@@ -1,8 +1,8 @@
 import React from 'react';
 import injectSheet from 'react-jss';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ContentWindow from '../ContentWindow';
+import { BrowserRouter as Router } from 'react-router-dom';
 
+import ContentWindow from '../ContentWindow';
 import MainSidebar from '../Sidebar';
 import styles from './App.styles';
 
