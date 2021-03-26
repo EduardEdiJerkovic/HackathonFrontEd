@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import injectSheet from 'react-jss';
 
-import airportOptions from '../../constants/airports';
-import Button from '../shared/Button/Button';
-import Input from '../shared/Input';
-import CustomSelect from '../shared/Select';
-import styles from './BuyForm.styles';
+import airportOptions from '../../../constants/airports';
+import Toast from '../../../utils/toast';
+import Button from '../../shared/Button/Button';
+import Input from '../../shared/Input';
+import CustomSelect from '../../shared/Select';
+import styles from './ReservateForm.styles';
 
 
 const ReservateForm = (props) => {
@@ -15,6 +16,7 @@ const ReservateForm = (props) => {
   const { handleSubmit, classes } = props;
 
   function formSubmit() {
+    Toast.triggerSuccess('Searching for flight...');
     handleSubmit(departureAirport, destinationAirport, departureDate);
   }
 
@@ -47,7 +49,7 @@ const ReservateForm = (props) => {
           <Input
             name={'departureDate'}
             type='date'
-            placeholder={departureDate}
+            value={departureDate}
             borderRadius="3px"
             onChange={(event) => {
               setDepartureDate(event.target.value)

@@ -1,12 +1,20 @@
-import React from 'react';
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import React, { Fragment, useState } from 'react';
+import injectSheet from 'react-jss';
+import { Route, Switch, useRouteMatch } from 'react-router';
 
-import BuyForm from './BuyForm';
-import ReservateForm from './ReservateForm';
+import BuyForm from '../Forms/SearchTickets/BuyForm';
+import ReservateForm from '../Forms/SearchTickets/ReservateForm';
+import styles from './Ticketsstyles';
 
-function Tickets() {
+function Tickets(props) {
   let { path } = useRouteMatch();
+
+  const { classes } = props;
+
+  
   return (
+    <Fragment>
+      <h3 className={classes.pageTitle}>Flights</h3>
     <Switch>
       {console.log("path", path)}
       <Route path={`${path}/reservate`}>
@@ -16,7 +24,8 @@ function Tickets() {
         <BuyForm></BuyForm>
       </Route>
     </Switch>
-  );
+    </Fragment>
+);
 
   // function handleReservationSubmit () {
 
@@ -28,6 +37,4 @@ function Tickets() {
 
 }
 
-
-
-export default Tickets;
+export default injectSheet(styles)(Tickets);

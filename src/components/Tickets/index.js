@@ -1,1 +1,1 @@
-export { default } from './SearchFlightsForm.js';
+export { default } from './Tickets';
