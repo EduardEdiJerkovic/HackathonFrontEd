@@ -49,7 +49,7 @@ const ReservateForm = (props) => {
           <Input
             name={'departureDate'}
             type='date'
-            placeholder={departureDate}
+            value={departureDate}
             borderRadius="3px"
             onChange={(event) => {
               setDepartureDate(event.target.value)

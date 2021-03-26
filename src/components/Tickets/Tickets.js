@@ -17,6 +17,17 @@ function Tickets() {
       </Route>
     </Switch>
   );
+
+  // function handleReservationSubmit () {
+
+  //   TokenService.fetchOrResetToken();
+  //     FlightScheduleService.getFlightDestination({origin: airport}).then(data => {
+  //       console.log(data);
+  //     })
+  // }
+
 }
+
+
 
 export default Tickets;
