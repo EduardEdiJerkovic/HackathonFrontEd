@@ -81,13 +81,21 @@ interface FlightDataResult {
 interface GetPopularDestinationsParams {
   originCityCode: string;
   period: string;
+  max?: number
 }
 
 interface PopularDestination {
   type: string;
   destination: string;
   subType: string;
-  analytics: object;
+  analytics: {
+    flights: {
+      score: number
+    },
+    travelers: {
+      score: number
+    }
+  }
 }
 interface FlightMostPopularDestinationsResult {
   meta: {

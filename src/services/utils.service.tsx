@@ -14,7 +14,6 @@ export const createHeader = (
   const token = localStorage.getItem(TOKEN);
   return {
     "Content-Type": "application/" + contentType,
-    "Access-Control-Allow-Origin": "test.api.amadeus.com",
     Authorization: `Bearer ${token}`,
   };
 };
