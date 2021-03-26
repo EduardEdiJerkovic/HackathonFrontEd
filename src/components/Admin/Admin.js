@@ -4,10 +4,11 @@ import Destinations from '../Destinations';
 
 function Admin() {
   let { path } = useRouteMatch();
+
   return (
     <Switch>
       <Route path={`${path}/destinations`}>
-        <Destinations></Destinations>
+        <Destinations/>
       </Route>
     </Switch>
   );
